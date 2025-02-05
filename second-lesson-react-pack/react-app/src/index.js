@@ -4,13 +4,24 @@ import './index.css';
 import App from './App';
 import XComponent from './customComponent'
 import reportWebVitals from './reportWebVitals';
-
+import CustomClass from './components/ClassComponent'
+import Massage from './components/StateMassage';
+import StateCounter from './components/StateCounter';
+import ClickFunc from './components/ClickFunc';
+import ClassEventHandler from './components/ClassEventHandler';
+import EventBind from './components/EventBind';
 let root =ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   <React.StrictMode>
     <App />
-    <XComponent/>
+    <XComponent componentName='function' propsIsA='object'/>
+    <CustomClass componentName='class'/>
+    <Massage/>
+    <StateCounter/>
+    <ClickFunc/>
+    <ClassEventHandler/>
+      <EventBind/>
   </React.StrictMode>
 )
 // old code from render 
