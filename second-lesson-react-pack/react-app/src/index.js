@@ -10,6 +10,9 @@ import StateCounter from './components/StateCounter';
 import ClickFunc from './components/ClickFunc';
 import ClassEventHandler from './components/ClassEventHandler';
 import EventBind from './components/EventBind';
+import ParentComponent from './components/ParentComponent';
+import ConditionalRender from './components/ConditionalRender';
+
 let root =ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
@@ -22,6 +25,8 @@ root.render(
     <ClickFunc/>
     <ClassEventHandler/>
       <EventBind/>
+      <ParentComponent/>
+      <ConditionalRender/>
   </React.StrictMode>
 )
 // old code from render 
