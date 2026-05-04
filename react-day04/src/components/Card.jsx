@@ -13,7 +13,7 @@ function Card(props) {
                 <p className="company-name">{props.companyName} <span className='date-post'>{props.jobPost}</span></p>
                 <p className="company-post-title">{props.jobTitle}</p>
                 <p className="company-job">
-                {props.jobType.map(function(elem){return (<span className='type'>{elem}</span>)})}
+                {props.jobType.map(function(elem,key){return (<span className='type' key={key}>{elem}</span>)})}
                 
                 <span className='type'>{props.jobLevel}</span>
                 </p>

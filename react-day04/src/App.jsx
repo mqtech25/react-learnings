@@ -116,7 +116,7 @@ function App(){
     <>
   <div className="card-wrapper">
     {jobPosts.map(function(elem,key){
-    return  <Card cardId={Math.round(Math.random()*23)} companyLogo={elem.companyLogo} companyName={elem.companyName} jobPost={elem.posted} jobTitle={elem.jobTitle} jobType={elem.jobType} jobLevel={elem.level} pay={elem.pay} location={elem.location} />
+    return  <Card key={key} companyLogo={elem.companyLogo} companyName={elem.companyName} jobPost={elem.posted} jobTitle={elem.jobTitle} jobType={elem.jobType} jobLevel={elem.level} pay={elem.pay} location={elem.location} />
     })}
   </div>  
     </>
