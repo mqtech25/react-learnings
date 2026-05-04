@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+  margin: 0; 
+  padding: 0;
+}
+
+body{
+  background: #202020;
+
+}
+
+.navbar{
+  background-color: #fff;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.card-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card{
+  background: #fff;
+  color: #000;
+  max-width: 400px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+}
+
+.card .card-header{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.card .card-header img{
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.card .card-header .save-btn{
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: #e2e0e0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  height: 30px;
+  width: 70px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.card .card-header .save-btn:hover{
+ background: #252525;
+ color: #fff;
+}
+.card .card-header .save-btn svg{
+  width: 18px;
+  height: 18px;
+}
+
+.card .card-body{
+  padding: 20px 0;
+}
+.card .card-body .company-name {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.card .card-body .company-name .date-post{
+  font-size: 12px;
+  color: #6f6c6c;
+} 
+.card .card-body .company-post-title{
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.card .card-body .company-job {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.card .card-body .company-job .type{
+  display: inline-block;
+  background: #e2e0e0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.card .card-footer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10p;
+  justify-content: space-between;
+  width: 100%;
+}
+.card .card-footer .company-hl .location{
+  font-size: 12px;
+  color: #8d8d8d;
+}
+
+.card .card-footer .company-job .apply-btn{
+  font-size: 14px;
+  color: #ffffff;
+  background: #1b1b1b;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.card .card-footer .company-job .apply-btn:hover{
+  background: #393939;
+  color: #fff;
+ }
