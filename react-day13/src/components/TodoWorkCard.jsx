@@ -1,5 +1,6 @@
 import React from 'react'
 import deletIcon from '../assets/delete-bin-line.svg'
+import editIcon from '../assets/pencil-line.svg'
 
 function TodoWorkCard(props) {
   return (
@@ -8,8 +9,11 @@ function TodoWorkCard(props) {
     <h2 className='todoWorkCard-title border-b-1  px-3 py-2'>{props.task}</h2>
     <p className='todoWorkCard-des text-gray-500 p-3'>{props.taskDetail}</p>
     </div>
-    <div className='flex justify-end  mt-auto '>
-      <span className='bg-red-400 p-1 rounded cursor-pointer' onClick={props.onClick}>
+    <div className='flex justify-between  mt-auto '>
+    <span className='bg-sky-400 p-1 rounded cursor-pointer' onClick={props.onClickEdit}  >
+      <img src={editIcon} className='w-6' alt="" />
+      </span>
+      <span className='bg-red-400 p-1 rounded cursor-pointer' onClick={props.onClickDelete}>
       <img src={deletIcon} className='w-6' alt="" />
       </span>
     </div>

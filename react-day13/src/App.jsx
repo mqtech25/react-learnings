@@ -25,18 +25,33 @@ function App() {
   const [todo,setTodo] = useState('')
   const [todoDes, setTodoDes] = useState('')
   const [todoTask,setTodoTask] = useState([])
+  const [editTodoIndex,setEditTodoIndex] =useState(null)
+  const [alert, setAlertMsg] = useState(null);
+
 
   const formSubmitHandler = (e)=>{
       e.preventDefault();
 
+      if(editTodoIndex != null){
+        const updateTodoTask = [...todoTask]
+        updateTodoTask[editTodoIndex] = {todo,todoDes}
+        setTodoTask(updateTodoTask)
+        setEditTodoIndex(null)
+      setAlertMsg('todo work updated');
+
+      }else{
       // const newTask = [...todoTask]
       // newTask.push({todo,todoDes})
       // setTodoTask(newTask)
-
       setTodoTask((preTask)=>{ return [...preTask,{todo,todoDes}]})
+      setAlertMsg('todo work added');
+      }
 
       setTodo('');
       setTodoDes('')
+      setTimeout(() => {
+        setAlertMsg(null);
+      }, 3000);
       console.log(todoTask);
       console.log('form submite');
   }
@@ -45,11 +60,30 @@ function App() {
     const copyTodoTask = [...todoTask]
      copyTodoTask.splice(key,1)
     setTodoTask(copyTodoTask)
+      setAlertMsg('todo work deleted');
+      setTimeout(() => {
+        setAlertMsg(null);
+      }, 3000);
    }
 
+   const TodoWorkCardEdit = (key)=>{
+    const todoTaskEdit = todoTask[key]
+      setTodo(todoTaskEdit.todo);
+      setTodoDes(todoTaskEdit.todoDes);
+      setEditTodoIndex(key)
+      setAlertMsg(<><p><strong>Note:</strong></p><ul><li>Todo data fills inside form</li><li>Change values</li> <li>Submit form</li></ul></>)
+      setTimeout(() => {
+        setAlertMsg(null);
+      }, 3000);
+    }
+
   return (
+   <>
+  <div style={{ right: alert != null ? '0' : '-100%', display: alert != null ? 'block' : 'none' }} className="p-4 mb-4 text-sm text-fg-brand-strong rounded-base bg-white absolute top-1 rounded-l-md  z-1  transition transition-all" role="alert">
+      <span class="font-medium">{alert}</span>
+    </div>
     <div>
-      <div className="flex bg-neutral-800 min-h-[100vh] h-[auto]">
+      <div className="flex flex-wrap bg-neutral-800 min-h-[100vh] h-[auto]">
         <div className="form text-white w-full lg:w-3/12 bg-sky-200 p-3 ">
             <h1 className='text-3xl text-black'>Todo</h1>
       <form onSubmit={(e)=>{
@@ -70,15 +104,19 @@ function App() {
              <div className="todoWorkCard-wrapper flex flex-wrap">
               {
                 todoTask.map((elem,key)=>{
-                  return <TodoWorkCard key={key} task={elem.todo} taskDetail={elem.todoDes} onClick={()=>{
+                  return <TodoWorkCard key={key} task={elem.todo} taskDetail={elem.todoDes} onClickDelete={()=>{
                     TodoWorkCardDelete(key)
+                  }} 
+                  onClickEdit ={ ()=>{
+                    TodoWorkCardEdit(key)
                   }}/>
                 })
               }
              </div>
           </div>
       </div>
-    </div>
+    </div> 
+   </>
   )
 }
 
